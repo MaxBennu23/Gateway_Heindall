@@ -1,0 +1,54 @@
+﻿@model Gateway_Heindall.Models.Integrador
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Integrador</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntegradorNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntegradorNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntegradorGrupo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntegradorGrupo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntegradorEndpoint)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntegradorEndpoint)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntegradorPublicKey)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntegradorPublicKey)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IntegradorPrivateKey)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IntegradorPrivateKey)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Grupo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Grupo.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

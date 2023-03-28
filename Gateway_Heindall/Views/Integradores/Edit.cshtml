@@ -1,0 +1,59 @@
+﻿@model Gateway_Heindall.Models.Integrador
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Integrador</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="IntegradorNome" class="control-label"></label>
+                <input asp-for="IntegradorNome" class="form-control" />
+                <span asp-validation-for="IntegradorNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntegradorGrupo" class="control-label"></label>
+                <input asp-for="IntegradorGrupo" class="form-control" />
+                <span asp-validation-for="IntegradorGrupo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntegradorEndpoint" class="control-label"></label>
+                <input asp-for="IntegradorEndpoint" class="form-control" />
+                <span asp-validation-for="IntegradorEndpoint" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntegradorPublicKey" class="control-label"></label>
+                <input asp-for="IntegradorPublicKey" class="form-control" />
+                <span asp-validation-for="IntegradorPublicKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntegradorPrivateKey" class="control-label"></label>
+                <input asp-for="IntegradorPrivateKey" class="form-control" />
+                <span asp-validation-for="IntegradorPrivateKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrupoId" class="control-label"></label>
+                <select asp-for="GrupoId" class="form-control" asp-items="ViewBag.GrupoId"></select>
+                <span asp-validation-for="GrupoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

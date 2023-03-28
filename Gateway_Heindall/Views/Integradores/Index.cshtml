@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Gateway_Heindall.Models.Integrador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegradorNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegradorGrupo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegradorEndpoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegradorPublicKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegradorPrivateKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grupo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegradorNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegradorGrupo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegradorEndpoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegradorPublicKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegradorPrivateKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupo.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

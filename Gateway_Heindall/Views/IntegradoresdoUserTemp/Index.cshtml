@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Gateway_Heindall.Models.IntegradordoUserTemp>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegradorNomeTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioIDAgenciaTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrupoUserTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrupoPasswordTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrupoPortTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicKeyTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrivateKeyTempTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Integrador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegradorNomeTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioIDAgenciaTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrupoUserTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrupoPasswordTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrupoPortTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicKeyTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrivateKeyTempTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Integrador.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
