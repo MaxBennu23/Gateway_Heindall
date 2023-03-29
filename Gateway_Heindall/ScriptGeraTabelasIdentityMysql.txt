@@ -1,0 +1,77 @@
+﻿-- AspNetRoles
+CREATE TABLE AspNetRoles (
+Id VARCHAR(191) NOT NULL,
+NAME VARCHAR(128), -- shortened from 256
+NormalizedName VARCHAR(128), -- shortened from 256
+ConcurrencyStamp VARCHAR(191),
+PRIMARY KEY (Id)
+);
+
+-- AspNetUsers
+CREATE TABLE AspNetUsers (
+Id VARCHAR(191) NOT NULL,
+UserName VARCHAR(128), -- shortened from 256
+NormalizedUserName VARCHAR(128), -- shortened from 256
+Email VARCHAR(128), -- shortened from 256
+NormalizedEmail VARCHAR(128), -- shortened from 256
+EmailConfirmed BOOLEAN,
+PasswordHash VARCHAR(191),
+SecurityStamp VARCHAR(191),
+ConcurrencyStamp VARCHAR(191),
+PhoneNumber VARCHAR(20), -- shortened from 255
+PhoneNumberConfirmed BOOLEAN,
+TwoFactorEnabled BOOLEAN,
+LockoutEnd TIMESTAMP,
+LockoutEnabled BOOLEAN,
+AccessFailedCount INT,
+PRIMARY KEY (Id)
+);
+
+-- AspNetRoleClaims
+CREATE TABLE AspNetRoleClaims (
+Id INT NOT NULL AUTO_INCREMENT,
+RoleId VARCHAR(191) NOT NULL,
+ClaimType VARCHAR(128), -- shortened from 255
+ClaimValue VARCHAR(128), -- shortened from 255
+PRIMARY KEY (Id),
+CONSTRAINT FK_AspNetRoleClaims_AspNetRoles_RoleId FOREIGN KEY (RoleId) REFERENCES AspNetRoles(Id) ON DELETE CASCADE
+);
+
+-- AspNetUserClaims
+CREATE TABLE AspNetUserClaims (
+Id INT NOT NULL AUTO_INCREMENT,
+UserId VARCHAR(191) NOT NULL,
+ClaimType VARCHAR(128), -- shortened from 255
+ClaimValue VARCHAR(128), -- shortened from 255
+PRIMARY KEY (Id),
+CONSTRAINT FK_AspNetUserClaims_AspNetUsers_UserId FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id) ON DELETE CASCADE
+);
+
+-- AspNetUserLogins
+CREATE TABLE AspNetUserLogins (
+LoginProvider VARCHAR(64) NOT NULL, -- shortened from 128
+ProviderKey VARCHAR(64) NOT NULL, -- shortened from 128
+ProviderDisplayName VARCHAR(128), -- shortened from 255
+UserId VARCHAR(191) NOT NULL,
+PRIMARY KEY (LoginProvider, ProviderKey),
+CONSTRAINT FK_AspNetUserLogins_AspNetUsers_UserId FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id) ON DELETE CASCADE
+);
+
+-- AspNetUserRoles
+CREATE TABLE AspNetUserRoles (
+UserId VARCHAR(191) NOT NULL,
+RoleId VARCHAR(191) NOT NULL,
+PRIMARY KEY (UserId, RoleId),
+CONSTRAINT FK_AspNetUserRoles_AspNetRoles_RoleId FOREIGN KEY (RoleId) REFERENCES AspNetRoles(Id) ON DELETE CASCADE,
+CONSTRAINT FK_AspNetUserRoles_AspNetUsers_UserId FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id) ON DELETE CASCADE
+);
+
+-- AspNetUserTokens
+CREATE TABLE AspNetUserTokens (
+UserId VARCHAR(191) NOT NULL,
+LoginProvider VARCHAR(64) NOT NULL, -- shortened from 128
+NAME VARCHAR(64) NOT NULL, -- shortened from 128
+VALUE VARCHAR(191),
+PRIMARY KEY (UserId, LoginProvider, NAME),
+CONSTRAINT FK_AspNetUserTokens_AspNetUsers_UserId FOREIGN KEY (UserId) REFERENCES AspNetUsers(Id) ON DELETE CASCADE
+);
