@@ -38,6 +38,10 @@ builder.Services.AddDbContext<PrincipalContext>
    (options => options.UseMySql( builder.Configuration.GetConnectionString("MySqlConnection"),
        Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.2.42-mysql")));
 
+builder.Services.AddDbContext<UserConfigContext>
+   (options => options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
+       Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.2.42-mysql")));
+
 /*builder.Services.AddDbContext<PrincipalContext>
     (options => options.UseMySql(
         "server=185.239.210.205;initial catalog=u839385910_heindall;uid=u839385910_heindall;pwd=Aa@heindall23",

@@ -46,7 +46,14 @@ namespace Gateway_Heindall.Controllers
         }
 
         // GET: Integradores/Create
-        public IActionResult Create()
+
+      /*  public IActionResult Create()
+        {
+            ViewBag.Grupos = _context.Grupos.ToList();
+            return View();
+        }*/
+
+       public IActionResult Create()
         {
             ViewData["GrupoId"] = new SelectList(_context.Grupos, "Id", "Id");
             return View();
