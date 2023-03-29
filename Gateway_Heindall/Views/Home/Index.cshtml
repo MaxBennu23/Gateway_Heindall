@@ -1,8 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
-
+<div class="container">
+	<img src="~/img/HHiero.png" width="150" height="100" class="d-inline-block align-top" alt="logo">
+</div>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 class="display-5">Acesse ABOUT para ideia geral do projeto</h1>
+	<br>
+	<h4>Esta é a plataforma de importações dos Integradores Heindall, não repare a bagunça.</h4>
+	<br>
+	<p>
+		USUARIO só terá acesso a tela do botão<br>
+		ADMIN faz os cadastros.
+	</p>
+	<br>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<button class="btn btn-primary w-100">Botãozão azul que chama todos os integradores cadatrados pro usuario que estiver logado</button>
+		</div>
+		<div class="col">
+			<button class="btn btn-secondary" onclick="window.location.href='@Url.Action("Menu", "Home")'">Cadastros</button>
+			<button class="btn btn-secondary" onclick="window.location.href='@Url.Action("About", "Home")'">Duvidas</button>
+			<button class="btn btn-secondary">Voltar</button>
+		</div>
+	</div>
+</div>
+<br>
+<div>
+	<footer class="footer">
+		<div class="container">
+			<img src="~/img/icones_embaixo.jpg" width="750" height="100" class="d-inline-block align-top" alt="logo">
+		</div>
+	</footer>
 </div>

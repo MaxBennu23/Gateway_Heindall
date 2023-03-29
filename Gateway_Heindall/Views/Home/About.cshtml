@@ -7,19 +7,18 @@
     <p>No momento, existe apenas UM cliente e UMA API.</p>
     </div>
 <div>
-    <p>Essa explicação se refere a um sistema que está sendo desenvolvido para gerir acessos e permissões de clientes e seus usuários para diferentes integradores (como REXTUR, AIRBNB e BOOKING) que utilizam o mesmo banco de dados para armazenar informações.</p>
-    <p>Neste momento, existe apenas um cliente e uma API, mas o sistema foi desenvolvido para receber outras APIs que possam utilizar o mesmo banco de dados no futuro.</p>
-    <p>Para utilizar o sistema, o usuário precisa se cadastrar e fazer login utilizando o Identity, que já oferece suporte para recuperação de senha.</p>
-    <p>Após o login, o usuário pode cadastrar um ou mais integradores. Se o usuário for o administrador, ele pode cadastrar os integradores mencionados acima (REXTUR, AIRBNB e BOOKING) fornecendo as informações necessárias. Se o usuário for um cliente específico, ele só pode apontar os integradores como sendo um de seus integradores e fornecer suas próprias informações de usuário e senha para cada integrador.</p>
-    <p>Quando um integrador é cadastrado, o sistema armazena as informações do integrador e os parâmetros de conexão necessários para chamar a API do integrador. Quando um usuário está logado, o sistema também armazena as informações do banco de dados de destino correspondente (MySQL do CLIENTE01 ou MySQL do CLIENTE02, respectivamente).</p>
-    <p>Quando o usuário faz uma chamada à API do integrador, o sistema utiliza as informações de login e os parâmetros de conexão cadastrados para fazer a chamada à API e obter os dados. Os dados obtidos são então armazenados no banco de dados de destino correspondente (MySQL do CLIENTE01 ou MySQL do CLIENTE02).</p>
+    <p>A ideia é gerir os acessos e permissões dos usuários para diferentes integradores (como REXTUR, AIRBNB e BOOKING) 
+        que utilizam o mesmo banco de dados para armazenar informações ( DE LOGIN E ACESSO, porem com destino dos dados diferente).</p>
+    <p>Para utilizar o sistema, o usuário só precisa fazer o login e clicar no botao azul.</p>
+    <p>O Admin cadastra os integradores mencionados acima (REXTUR, AIRBNB e BOOKING) fornecendo as informações necessárias.</p>
+    <p>Em seguida relaciona os login e senha para cada integrador, correspondente ao usuario ( que fará login).</p>
+    <p> Quando um usuário está logado, o sistema armazena na INTEGRADORESDOUSERTEMP as informações do banco de dados de destino e a 
+        string de conexão correspondente.</p>
+    <p>Quando o usuário faz uma chamada à API do integrador, o sistema utiliza as informações de login 
+        e os parâmetros de conexão cadastrados para fazer a chamada à API e obter os dados. 
+        Os dados obtidos são então armazenados no banco de dados de destino correspondente.</p>
 </div>
 
-<div>
-    <p>QUANDO um usuário está logado, o sistema deve armazenar as informações do banco de dados de destino correspondente (MySQL do CLIENTE01 ou MySQL do CLIENTE02, respectivamente).</p>
-    <p>Quando o usuário faz uma chamada à API do integrador, o sistema deve utilizar as informações de login e os parâmetros de conexão cadastrados para fazer a chamada à API e obter os dados.</p>
-    <p>Os dados obtidos devem ser armazenados no banco de dados de destino correspondente (MySQL do CLIENTE01 ou MySQL do CLIENTE02).</p>
-</div>
 <div>
 <h2>Explicação dos relacionamentos:</h2>
 <p>A classe Grupo tem uma coleção de Integrador, ou seja, um grupo pode ter vários integradores.</p>
@@ -27,4 +26,27 @@
 <p>A classe ApplicationUser tem uma coleção de Integrador, ou seja, um usuário pode ter vários integradores adicionados.</p>
 <p>A classe IntegradorDoUser tem uma referência para Integrador, indicando qual integrador foi adicionado pelo usuário. Além disso, tem uma referência para ApplicationUser, indicando qual usuário adicionou esse integrador. Também possui as informações de login, senha e número de acesso adicionados pelo usuário.</p>
 <p>A classe IntegradoresDoUserTemp é uma tabela temporária que armazena dados de integradores do usuário logado. Tem referências para Integrador, ApplicationUser e IntegradorDoUser para obter informações sobre o integrador, o usuário e as informações de login, senha e número de acesso.</p>
+</div>
+
+
+<div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-auto">
+            <img src="~/img/21f157ee-bbfb-427f-815a-53be2247e8a4.jpg" class="img-fluid" alt="logo">
+        </div>
+    </div>
+</div>
+<div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-auto">
+            <img src="~/img/4168cb69-7c7a-42ac-b898-6b7232b14ddf.jpg" class="img-fluid" alt="logo">
+        </div>
+    </div>
+</div>
+<div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-auto">
+            <img src="~/img/dd6b7b0f-2845-417b-8b80-3807ff517e9e.jpg" class="img-fluid" alt="logo">
+        </div>
+    </div>
 </div>

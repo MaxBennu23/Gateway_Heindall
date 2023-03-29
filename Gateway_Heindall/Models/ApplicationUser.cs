@@ -4,7 +4,7 @@ namespace Gateway_Heindall.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public new int Id { get; set; }
+       
         public string UserCNPJ { get; set; }
         public string UserNivel { get; set; }
         public string UserNomeEmpresa { get; set; }
