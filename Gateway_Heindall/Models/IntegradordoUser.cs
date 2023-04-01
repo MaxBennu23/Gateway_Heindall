@@ -3,19 +3,19 @@
     public class IntegradordoUser
     {
         public int Id { get; set; }
-        public string IntegradorNome { get; set; }
         public string UsuarioIDAgencia { get; set; }
-        public string GrupoUser { get; set; }
-        public string GrupoPassword { get; set; }
-        public int GrupoPort { get; set; }
-        public string PublicKey { get; set; }
-        public string PrivateKey { get; set; }
+        public string IntegUserUser { get; set; }
+        public string IntegUserPass { get; set; }
+        public int IntegUserPort { get; set; }
+        public string IntegUserPublicKey { get; set; }
+        public string IntegUserPrivateKey { get; set; }
 
-        public int IntegradorId { get; set; }
+        public int IntegradorId { get; set; } // Adiciona a propriedade IntegradorId
+        public int UserDadosConexId { get; set; }
+
         public Integrador Integrador { get; set; }
-
-        public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public UserDadosConex UserDadosConex { get; set; }
+        
 
     }
 }

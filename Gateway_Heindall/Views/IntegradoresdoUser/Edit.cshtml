@@ -14,39 +14,34 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="IntegradorNome" class="control-label"></label>
-                <input asp-for="IntegradorNome" class="form-control" />
-                <span asp-validation-for="IntegradorNome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="UsuarioIDAgencia" class="control-label"></label>
                 <input asp-for="UsuarioIDAgencia" class="form-control" />
                 <span asp-validation-for="UsuarioIDAgencia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GrupoUser" class="control-label"></label>
-                <input asp-for="GrupoUser" class="form-control" />
-                <span asp-validation-for="GrupoUser" class="text-danger"></span>
+                <label asp-for="IntegUserUser" class="control-label"></label>
+                <input asp-for="IntegUserUser" class="form-control" />
+                <span asp-validation-for="IntegUserUser" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GrupoPassword" class="control-label"></label>
-                <input asp-for="GrupoPassword" class="form-control" />
-                <span asp-validation-for="GrupoPassword" class="text-danger"></span>
+                <label asp-for="IntegUserPass" class="control-label"></label>
+                <input asp-for="IntegUserPass" class="form-control" />
+                <span asp-validation-for="IntegUserPass" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GrupoPort" class="control-label"></label>
-                <input asp-for="GrupoPort" class="form-control" />
-                <span asp-validation-for="GrupoPort" class="text-danger"></span>
+                <label asp-for="IntegUserPort" class="control-label"></label>
+                <input asp-for="IntegUserPort" class="form-control" />
+                <span asp-validation-for="IntegUserPort" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PublicKey" class="control-label"></label>
-                <input asp-for="PublicKey" class="form-control" />
-                <span asp-validation-for="PublicKey" class="text-danger"></span>
+                <label asp-for="IntegUserPublicKey" class="control-label"></label>
+                <input asp-for="IntegUserPublicKey" class="form-control" />
+                <span asp-validation-for="IntegUserPublicKey" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PrivateKey" class="control-label"></label>
-                <input asp-for="PrivateKey" class="form-control" />
-                <span asp-validation-for="PrivateKey" class="text-danger"></span>
+                <label asp-for="IntegUserPrivateKey" class="control-label"></label>
+                <input asp-for="IntegUserPrivateKey" class="form-control" />
+                <span asp-validation-for="IntegUserPrivateKey" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IntegradorId" class="control-label"></label>
@@ -54,9 +49,9 @@
                 <span asp-validation-for="IntegradorId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
-                <span asp-validation-for="UserId" class="text-danger"></span>
+                <label asp-for="UserDadosConexId" class="control-label"></label>
+                <select asp-for="UserDadosConexId" class="form-control" asp-items="ViewBag.UserDadosConexId"></select>
+                <span asp-validation-for="UserDadosConexId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -7,37 +7,34 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn-success" asp-action="Create">Adicionar</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IntegradorNome)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GrupoUser)
+                @Html.DisplayNameFor(model => model.IntegUserUser)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GrupoPassword)
+                @Html.DisplayNameFor(model => model.IntegUserPass)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GrupoPort)
+                @Html.DisplayNameFor(model => model.IntegUserPort)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PublicKey)
+                @Html.DisplayNameFor(model => model.IntegUserPublicKey)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PrivateKey)
+                @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Integrador)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserId)
+                @Html.DisplayNameFor(model => model.UserDadosConex)
             </th>
             <th></th>
         </tr>
@@ -46,36 +43,33 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IntegradorNome)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.UsuarioIDAgencia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GrupoUser)
+                @Html.DisplayFor(modelItem => item.IntegUserUser)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GrupoPassword)
+                @Html.DisplayFor(modelItem => item.IntegUserPass)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GrupoPort)
+                @Html.DisplayFor(modelItem => item.IntegUserPort)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PublicKey)
+                @Html.DisplayFor(modelItem => item.IntegUserPublicKey)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PrivateKey)
+                @Html.DisplayFor(modelItem => item.IntegUserPrivateKey)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Integrador.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.UserDadosConex.Id)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn-info" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn-warning" asp-action="Details" asp-route-id="@item.Id">Consultar</a>
+                    <a class="btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
             </td>
         </tr>
 }

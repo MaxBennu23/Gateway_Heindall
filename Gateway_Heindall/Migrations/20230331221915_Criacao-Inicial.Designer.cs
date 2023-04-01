@@ -3,6 +3,7 @@ using System;
 using Gateway_Heindall.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gateway_Heindall.Migrations
 {
     [DbContext(typeof(PrincipalContext))]
-    partial class PrincipalContextModelSnapshot : ModelSnapshot
+    [Migration("20230331221915_Criacao-Inicial")]
+    partial class CriacaoInicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

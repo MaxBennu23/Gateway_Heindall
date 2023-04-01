@@ -22,7 +22,7 @@ namespace Gateway_Heindall.Controllers
         // GET: IntegradoresdoUser
         public async Task<IActionResult> Index()
         {
-            var principalContext = _context.IntegradoresdoUser.Include(i => i.Integrador);
+            var principalContext = _context.IntegradoresdoUser.Include(i => i.Integrador).Include(i => i.UserDadosConex);
             return View(await principalContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace Gateway_Heindall.Controllers
 
             var integradordoUser = await _context.IntegradoresdoUser
                 .Include(i => i.Integrador)
+                .Include(i => i.UserDadosConex)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (integradordoUser == null)
             {
@@ -49,6 +50,7 @@ namespace Gateway_Heindall.Controllers
         public IActionResult Create()
         {
             ViewData["IntegradorId"] = new SelectList(_context.Integradores, "Id", "Id");
+            ViewData["UserDadosConexId"] = new SelectList(_context.UsersDadosConex, "Id", "Id");
             return View();
         }
 
@@ -57,7 +59,7 @@ namespace Gateway_Heindall.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IntegradorNome,UsuarioIDAgencia,GrupoUser,GrupoPassword,GrupoPort,PublicKey,PrivateKey,IntegradorId,UserId")] IntegradordoUser integradordoUser)
+        public async Task<IActionResult> Create([Bind("Id,UsuarioIDAgencia,IntegUserUser,IntegUserPass,IntegUserPort,IntegUserPublicKey,IntegUserPrivateKey,IntegradorId,UserDadosConexId")] IntegradordoUser integradordoUser)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +68,7 @@ namespace Gateway_Heindall.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IntegradorId"] = new SelectList(_context.Integradores, "Id", "Id", integradordoUser.IntegradorId);
+            ViewData["UserDadosConexId"] = new SelectList(_context.UsersDadosConex, "Id", "Id", integradordoUser.UserDadosConexId);
             return View(integradordoUser);
         }
 
@@ -83,6 +86,7 @@ namespace Gateway_Heindall.Controllers
                 return NotFound();
             }
             ViewData["IntegradorId"] = new SelectList(_context.Integradores, "Id", "Id", integradordoUser.IntegradorId);
+            ViewData["UserDadosConexId"] = new SelectList(_context.UsersDadosConex, "Id", "Id", integradordoUser.UserDadosConexId);
             return View(integradordoUser);
         }
 
@@ -91,7 +95,7 @@ namespace Gateway_Heindall.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IntegradorNome,UsuarioIDAgencia,GrupoUser,GrupoPassword,GrupoPort,PublicKey,PrivateKey,IntegradorId,UserId")] IntegradordoUser integradordoUser)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UsuarioIDAgencia,IntegUserUser,IntegUserPass,IntegUserPort,IntegUserPublicKey,IntegUserPrivateKey,IntegradorId,UserDadosConexId")] IntegradordoUser integradordoUser)
         {
             if (id != integradordoUser.Id)
             {
@@ -119,6 +123,7 @@ namespace Gateway_Heindall.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IntegradorId"] = new SelectList(_context.Integradores, "Id", "Id", integradordoUser.IntegradorId);
+            ViewData["UserDadosConexId"] = new SelectList(_context.UsersDadosConex, "Id", "Id", integradordoUser.UserDadosConexId);
             return View(integradordoUser);
         }
 
@@ -132,6 +137,7 @@ namespace Gateway_Heindall.Controllers
 
             var integradordoUser = await _context.IntegradoresdoUser
                 .Include(i => i.Integrador)
+                .Include(i => i.UserDadosConex)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (integradordoUser == null)
             {
@@ -162,7 +168,7 @@ namespace Gateway_Heindall.Controllers
 
         private bool IntegradordoUserExists(int id)
         {
-          return (_context.IntegradoresdoUser?.Any(e => e.Id == id)).GetValueOrDefault();
+          return _context.IntegradoresdoUser.Any(e => e.Id == id);
         }
     }
 }

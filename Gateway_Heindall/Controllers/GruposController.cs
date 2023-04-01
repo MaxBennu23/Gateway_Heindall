@@ -22,9 +22,7 @@ namespace Gateway_Heindall.Controllers
         // GET: Grupos
         public async Task<IActionResult> Index()
         {
-              return _context.Grupos != null ? 
-                          View(await _context.Grupos.ToListAsync()) :
-                          Problem("Entity set 'PrincipalContext.Grupos'  is null.");
+              return View(await _context.Grupos.ToListAsync());
         }
 
         // GET: Grupos/Details/5
@@ -74,8 +72,9 @@ namespace Gateway_Heindall.Controllers
             {
                 return NotFound();
             }
-
+                     
             var grupo = await _context.Grupos.FindAsync(id);
+
             if (grupo == null)
             {
                 return NotFound();
@@ -157,7 +156,7 @@ namespace Gateway_Heindall.Controllers
 
         private bool GrupoExists(int id)
         {
-          return (_context.Grupos?.Any(e => e.Id == id)).GetValueOrDefault();
+          return _context.Grupos.Any(e => e.Id == id);
         }
     }
 }

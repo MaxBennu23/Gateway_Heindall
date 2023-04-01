@@ -9,8 +9,8 @@
         public string IntegradorPublicKey { get; set; }
         public string IntegradorPrivateKey { get; set; }
 
-        public int GrupoId { get; set; }
-        public Grupo Grupo { get; set; }
+        public int GrupoId { get; set; } // Chave estrangeira para a entidade Grupo
+        public Grupo Grupo { get; set; } // Propriedade de navegação
 
         public ICollection<IntegradordoUser> IntegradoresdoUser { get; set; }
 

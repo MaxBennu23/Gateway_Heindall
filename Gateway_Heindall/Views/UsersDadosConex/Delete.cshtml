@@ -1,4 +1,4 @@
-﻿@model Gateway_Heindall.Models.IntegradordoUser
+﻿@model Gateway_Heindall.Models.UserDadosConex
 
 @{
     ViewData["Title"] = "Delete";
@@ -8,56 +8,56 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>IntegradordoUser</h4>
+    <h4>UserDadosConex</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
+            @Html.DisplayNameFor(model => model.UserCNPJ)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioIDAgencia)
+            @Html.DisplayFor(model => model.UserCNPJ)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntegUserUser)
+            @Html.DisplayNameFor(model => model.UserNivel)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntegUserUser)
+            @Html.DisplayFor(model => model.UserNivel)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntegUserPass)
+            @Html.DisplayNameFor(model => model.UserNomeEmpresa)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntegUserPass)
+            @Html.DisplayFor(model => model.UserNomeEmpresa)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntegUserPort)
+            @Html.DisplayNameFor(model => model.UserHostDestino)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntegUserPort)
+            @Html.DisplayFor(model => model.UserHostDestino)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntegUserPublicKey)
+            @Html.DisplayNameFor(model => model.UserHostUserDestino)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntegUserPublicKey)
+            @Html.DisplayFor(model => model.UserHostUserDestino)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
+            @Html.DisplayNameFor(model => model.UserSenhaDestino)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntegUserPrivateKey)
+            @Html.DisplayFor(model => model.UserSenhaDestino)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Integrador)
+            @Html.DisplayNameFor(model => model.UserPortDestino)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Integrador.Id)
+            @Html.DisplayFor(model => model.UserPortDestino)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserDadosConex)
+            @Html.DisplayNameFor(model => model.UserBancoDestino)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserDadosConex.Id)
+            @Html.DisplayFor(model => model.UserBancoDestino)
         </dd>
     </dl>
     

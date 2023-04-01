@@ -10,90 +10,85 @@ using Gateway_Heindall.Models;
 
 namespace Gateway_Heindall.Controllers
 {
-    public class IntegradoresController : Controller
+    public class UsersDadosConexController : Controller
     {
         private readonly PrincipalContext _context;
 
-        public IntegradoresController(PrincipalContext context)
+        public UsersDadosConexController(PrincipalContext context)
         {
             _context = context;
         }
 
-        // GET: Integradores
+        // GET: UsersDadosConex
         public async Task<IActionResult> Index()
         {
-            var principalContext = _context.Integradores.Include(i => i.Grupo);
-            return View(await principalContext.ToListAsync());
+              return View(await _context.UsersDadosConex.ToListAsync());
         }
 
-        // GET: Integradores/Details/5
+        // GET: UsersDadosConex/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Integradores == null)
+            if (id == null || _context.UsersDadosConex == null)
             {
                 return NotFound();
             }
 
-            var integrador = await _context.Integradores
-                .Include(i => i.Grupo)
+            var userDadosConex = await _context.UsersDadosConex
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (integrador == null)
+            if (userDadosConex == null)
             {
                 return NotFound();
             }
 
-            return View(integrador);
+            return View(userDadosConex);
         }
 
-        // GET: Integradores/Create
+        // GET: UsersDadosConex/Create
         public IActionResult Create()
         {
-            ViewData["GrupoId"] = new SelectList(_context.Grupos, "Id", "Id");
             return View();
         }
 
-        // POST: Integradores/Create
+        // POST: UsersDadosConex/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IntegradorNome,IntegradorGrupo,IntegradorEndpoint,IntegradorPublicKey,IntegradorPrivateKey,GrupoId")] Integrador integrador)
+        public async Task<IActionResult> Create([Bind("Id,UserCNPJ,UserNivel,UserNomeEmpresa,UserHostDestino,UserHostUserDestino,UserSenhaDestino,UserPortDestino,UserBancoDestino")] UserDadosConex userDadosConex)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(integrador);
+                _context.Add(userDadosConex);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GrupoId"] = new SelectList(_context.Grupos, "Id", "Id", integrador.GrupoId);
-            return View(integrador);
+            return View(userDadosConex);
         }
 
-        // GET: Integradores/Edit/5
+        // GET: UsersDadosConex/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Integradores == null)
+            if (id == null || _context.UsersDadosConex == null)
             {
                 return NotFound();
             }
 
-            var integrador = await _context.Integradores.FindAsync(id);
-            if (integrador == null)
+            var userDadosConex = await _context.UsersDadosConex.FindAsync(id);
+            if (userDadosConex == null)
             {
                 return NotFound();
             }
-            ViewData["GrupoId"] = new SelectList(_context.Grupos, "Id", "Id", integrador.GrupoId);
-            return View(integrador);
+            return View(userDadosConex);
         }
 
-        // POST: Integradores/Edit/5
+        // POST: UsersDadosConex/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IntegradorNome,IntegradorGrupo,IntegradorEndpoint,IntegradorPublicKey,IntegradorPrivateKey,GrupoId")] Integrador integrador)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UserCNPJ,UserNivel,UserNomeEmpresa,UserHostDestino,UserHostUserDestino,UserSenhaDestino,UserPortDestino,UserBancoDestino")] UserDadosConex userDadosConex)
         {
-            if (id != integrador.Id)
+            if (id != userDadosConex.Id)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace Gateway_Heindall.Controllers
             {
                 try
                 {
-                    _context.Update(integrador);
+                    _context.Update(userDadosConex);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!IntegradorExists(integrador.Id))
+                    if (!UserDadosConexExists(userDadosConex.Id))
                     {
                         return NotFound();
                     }
@@ -118,51 +113,49 @@ namespace Gateway_Heindall.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GrupoId"] = new SelectList(_context.Grupos, "Id", "Id", integrador.GrupoId);
-            return View(integrador);
+            return View(userDadosConex);
         }
 
-        // GET: Integradores/Delete/5
+        // GET: UsersDadosConex/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Integradores == null)
+            if (id == null || _context.UsersDadosConex == null)
             {
                 return NotFound();
             }
 
-            var integrador = await _context.Integradores
-                .Include(i => i.Grupo)
+            var userDadosConex = await _context.UsersDadosConex
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (integrador == null)
+            if (userDadosConex == null)
             {
                 return NotFound();
             }
 
-            return View(integrador);
+            return View(userDadosConex);
         }
 
-        // POST: Integradores/Delete/5
+        // POST: UsersDadosConex/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Integradores == null)
+            if (_context.UsersDadosConex == null)
             {
-                return Problem("Entity set 'PrincipalContext.Integradores'  is null.");
+                return Problem("Entity set 'PrincipalContext.UsersDadosConex'  is null.");
             }
-            var integrador = await _context.Integradores.FindAsync(id);
-            if (integrador != null)
+            var userDadosConex = await _context.UsersDadosConex.FindAsync(id);
+            if (userDadosConex != null)
             {
-                _context.Integradores.Remove(integrador);
+                _context.UsersDadosConex.Remove(userDadosConex);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool IntegradorExists(int id)
+        private bool UserDadosConexExists(int id)
         {
-          return _context.Integradores.Any(e => e.Id == id);
+          return _context.UsersDadosConex.Any(e => e.Id == id);
         }
     }
 }
