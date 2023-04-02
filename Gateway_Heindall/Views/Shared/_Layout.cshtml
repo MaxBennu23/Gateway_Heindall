@@ -23,24 +23,18 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Grupos" asp-action="Index">ORIGEM dos DADOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Grupos" asp-action="Index">Grupos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="UsersDadosConex" asp-action="Index">DADOS do USUARIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Integradores" asp-action="Index">Integradores</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Index">INTEGRADORE dos USUARIOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UsersDadosConex" asp-action="Index">UserDados</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Conexoes">Rota das APIs</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Index">Integradores do Usuario</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUserTemp" asp-action="About">Integ User Temp + String Conex</a>
-                        </li>
+                      
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

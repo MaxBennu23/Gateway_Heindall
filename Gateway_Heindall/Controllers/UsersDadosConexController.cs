@@ -34,6 +34,14 @@ namespace Gateway_Heindall.Controllers
             }
 
             var userDadosConex = await _context.UsersDadosConex
+
+
+
+            .Include(g => g.IntegradoresdoUser)// Cria relacionamento com listagem de Integradores
+            .ThenInclude(i => i.Integrador) // Depois com Integradores
+
+            
+
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userDadosConex == null)
             {

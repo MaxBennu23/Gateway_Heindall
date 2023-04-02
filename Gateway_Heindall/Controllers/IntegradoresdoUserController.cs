@@ -26,6 +26,13 @@ namespace Gateway_Heindall.Controllers
             return View(await principalContext.ToListAsync());
         }
 
+        // GET: IntegradoresdoUser/Conexoes
+        public async Task<IActionResult> Conexoes()
+        {
+            var principalContext = _context.IntegradoresdoUser.Include(i => i.Integrador).Include(i => i.UserDadosConex);
+            return View(await principalContext.ToListAsync());
+        }
+
         // GET: IntegradoresdoUser/Details/5
         public async Task<IActionResult> Details(int? id)
         {

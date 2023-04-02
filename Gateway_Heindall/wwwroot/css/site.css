@@ -40,8 +40,8 @@ body {
 /*.btn {
     flex: 1;
     margin-bottom: 10px;
-    border-radius: 5px; BOTOES PADRAO */ 
-}
+    border-radius: 5px; BOTOES PADRAO 
+}*/ 
 
 .center {
     display: flex;
@@ -247,3 +247,4 @@ h1 {
         background-color: #0069d9;
         border-color: #0062cc;
     }
+

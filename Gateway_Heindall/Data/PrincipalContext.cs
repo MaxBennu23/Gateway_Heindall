@@ -13,8 +13,6 @@ namespace Gateway_Heindall.Data
         public DbSet<Integrador> Integradores { get; set; }
         public DbSet<UserDadosConex> UsersDadosConex { get; set; }
         public DbSet<IntegradordoUser> IntegradoresdoUser { get; set; }
-        public DbSet<IntegradordoUserTemp> IntegradoresdoUserTemp { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

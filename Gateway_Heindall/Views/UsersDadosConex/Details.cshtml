@@ -64,3 +64,37 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+
+
+<div>
+    <h4>Integradores com quem este Usuario faz conexão</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Grupo</th>
+                <th>Nome do Integrador</th>
+                <th>Rota de Conexão</th>
+                <th>Porta de Conexão</th>
+                <th>ID Agencia do Usuario</th>
+                <th>Login do User neste Integrador</th>
+                <th>Senha do User neste Integrador</th>        
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var IntegradoresdoUser in Model.IntegradoresdoUser)
+            {
+                <tr>
+                    <td>@IntegradoresdoUser.Integrador.IntegradorGrupo</td>
+                    <td>@IntegradoresdoUser.Integrador.IntegradorNome</td>
+                    <td>@IntegradoresdoUser.Integrador.IntegradorEndpoint</td>
+                    <td>@IntegradoresdoUser.IntegUserPort</td>
+                    <td>@IntegradoresdoUser.UsuarioIDAgencia</td>
+                    <td>@IntegradoresdoUser.IntegUserUser</td>
+                    <td>@IntegradoresdoUser.IntegUserPass</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

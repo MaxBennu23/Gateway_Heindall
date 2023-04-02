@@ -44,6 +44,7 @@ namespace Gateway_Heindall.Controllers
 
             return View(integrador);
         }
+      
 
         // GET: Integradores/Create
         public IActionResult Create()

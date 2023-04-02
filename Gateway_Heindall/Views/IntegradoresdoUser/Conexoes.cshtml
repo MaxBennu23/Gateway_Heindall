@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Gateway_Heindall.Models.IntegradordoUser>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rotas de Acesso para as APIs</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegUserUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegUserPass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegUserPort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegUserPublicKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Integrador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserDadosConex)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioIDAgencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegUserUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegUserPass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegUserPort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegUserPublicKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegUserPrivateKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Integrador.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserDadosConex.Id)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserDadosConex.UserBancoDestino)
+                </td>
+
+                               <td>
+    @Html.DisplayFor(modelItem => item.UserDadosConex.UserNomeEmpresa)
+                </td>
+<td>
+    @Html.DisplayFor(modelItem => item.UserDadosConex.UserHostDestino)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.UserDadosConex.UserHostUserDestino)
+</td>
+ <td>
+    @Html.DisplayFor(modelItem => item.UserDadosConex.UserSenhaDestino)
+                </td>
+<td>
+    @Html.DisplayFor(modelItem => item.UserDadosConex.UserPortDestino)
+</td>
+            
+        </tr>
+}
+    </tbody>
+</table>

@@ -28,13 +28,19 @@ namespace Gateway_Heindall.Controllers
         // GET: Grupos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+                      
             if (id == null || _context.Grupos == null)
             {
                 return NotFound();
             }
 
             var grupo = await _context.Grupos
-                .FirstOrDefaultAsync(m => m.Id == id);
+
+
+                    .Include(g => g.Integradores)// Cria relacionamento com listagem de Integradores do User
+                
+                    
+                    .FirstOrDefaultAsync(m => m.Id == id);
             if (grupo == null)
             {
                 return NotFound();
