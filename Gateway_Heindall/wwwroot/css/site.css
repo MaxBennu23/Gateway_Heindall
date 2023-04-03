@@ -68,13 +68,10 @@ body {
     --secondary-color: #ffa500;
 }
 
-/* Estilo da tabela */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-    color: #495057; /* Define a cor do texto como branco */
-    background-color: lightgoldenrodyellow; /* Aplica o degrade de azul para preto */
+/* Fonte */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--font-color);
 }
 
     .table th,
