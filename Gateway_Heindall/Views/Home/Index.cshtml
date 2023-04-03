@@ -1,28 +1,49 @@
 ﻿@{
-    ViewData["Title"] = "Inicio";
+    ViewData["Title"] = "Painel de Controle";
 }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+@* HELP : Fontes : Este link importa as fontes diferentonas pro projeto*@
+
+
 <div class="container">
-	<img src="~/img/HHiero.png" width="150" height="100" class="d-inline-block align-top" alt="logo">
+	<img id="plane" src="~/img/planepng.png" width="500" height="300" class="d-inline-block align-top" alt="logo">
 </div>
-<div class="text-center">
-	<h1 class="display-5">Acesse ABOUT para ideia geral do projeto</h1>
-	<br>
-	<h4>Esta é a plataforma de importações dos Integradores Heindall</h4>
-	<br>
-	<br>
+
+<div class="textao">
+	<h1 id="texto-digitado"></h1>
 </div>
+
+<br>
+<div style="border-top: 3px solid #000033;"></div>
+<br>
+
 <div class="container">
 	<div class="row">
-		<div class="col">
-			<button class="btn btn-primary w-100">Nova diretriz, 0% de interação do usuario. API executam a cada 3h</button>
-		</div>
-		<div class="col">
-			<button class="btn" onclick="window.location.href='@Url.Action("Index", "Grupos")'">Grupos de Integradores</button>
-			<button class="btn" onclick="window.location.href='@Url.Action("Index", "Integradores")'">Integradores Possiveis</button>
-			<button class="btn" onclick="window.location.href='@Url.Action("Index", "UsersDadosConex")'">Dados do Usuario</button>
-			<button class="btn" onclick="window.location.href='@Url.Action("Index", "IntegradoresdoUser")'">Integradores Do Usuarios</button>
-			<button class="btn" onclick="window.location.href='@Url.Action("Index", "IntegradoresdoUser")'">Tabela de clientes com sus integradores login e senha</button>
-			
+		
+		<div class="container">
+			<div  style="display: flex; justify-content: space-between;">
+				
+				<div class="col-sm-6 col-md-3 mb-4">
+				
+					<a href="@Url.Action("Index", "Grupos")" onclick="window.location.href='@Url.Action("Index", "Grupos")'" class="btn btn-primary btn-lg btn-block">GRUPOS</a>
+				</div>
+				
+				<div class="col-sm-6 col-md-3 mb-4">
+						
+					<a href="@Url.Action("Index", "UsersDadosConex")" onclick="window.location.href='@Url.Action("Index", "UsersDadosConex")'" class="btn btn-primary btn-lg btn-block">USERS</a>
+				</div>
+				
+				<div class="col-sm-6 col-md-3 mb-4">
+							
+					<a href="@Url.Action("Index", "Integradores")" onclick="window.location.href='@Url.Action("Index", "Integradores")'" class="btn btn-primary btn-lg btn-block">INTEGRA</a>
+				</div>
+				
+				<div class="col-sm-6 col-md-3 mb-4">
+								
+					<a href="@Url.Action("Index", "IntegradoresdoUser")" onclick="window.location.href='@Url.Action("Index", "IntegradoresdoUser")'" class="btn btn-primary btn-lg btn-block">INTEG.USER</a>
+				</div>
+				
+			</div>
 		</div>
 	</div>
 </div>
@@ -30,7 +51,39 @@
 <div>
 	<footer class="footer">
 		<div class="container">
-			<img src="~/img/icones_embaixo.jpg" width="750" height="100" class="d-inline-block align-top" alt="logo">
+			<img src="~/img/techbackground.png" width="300" height="200" class="d-inline-block align-top" alt="rodape">
+			
 		</div>
 	</footer>
 </div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+
+
+@*
+<script>
+	const text = "Conectando as melhores oportunidades.";
+	let index = 0;
+
+	function typeEffect() {
+		document.querySelector('h1').textContent += text[index];
+		index++;
+
+		if (index === text.length) {
+			clearInterval(timer);
+		}
+	}
+
+	const timer = setInterval(typeEffect, 100);
+
+	typeEffect(); // chama a função para iniciar o efeito de digitação
+</script>
+
+*@
+
+

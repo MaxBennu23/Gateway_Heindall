@@ -10,95 +10,100 @@
 
 <div class="d-flex justify-content-between">
     <div>
-        <a class="btn btn-success" asp-action="Create">Adicionar Grupos</a>
+        <a class="btn" asp-action="Create">Adicionar Grupos</a>
     </div>
+
     <div>
         <a class="btn btn-success" asp-action="Index" asp-controller="Integradores">Acessar Integradores</a>
     </div>
 </div>
 
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoArea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoMetodo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoURL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoPassword)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GrupoPort)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublicKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrivateKey)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoArea)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoMetodo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoURL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoPassword)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GrupoPort)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublicKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrivateKey)
-            </td>
-            <td>
-                    <a class="btn-info"asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                    <a class="btn-warning" asp-action="Details" asp-route-id="@item.Id">Consultar</a>
-                    <a class="btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div style="width: 1400px; height: 500px; overflow-x: scroll; overflow-y: scroll;">
+    @*Help : Barra da Rolagem : O estilo define o tamanha da janela*@
+    
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoArea)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoMetodo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoURL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoPassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrupoPort)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PublicKey)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrivateKey)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoArea)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoMetodo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoURL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GrupoPort)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublicKey)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrivateKey)
+                    </td>
+                    <td>
+                        <a class="btn" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn" asp-action="Details" asp-route-id="@item.Id">Consultar</a>
+                        <a class="btn" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

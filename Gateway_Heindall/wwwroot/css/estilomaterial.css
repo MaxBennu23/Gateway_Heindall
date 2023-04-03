@@ -1,0 +1,120 @@
+﻿body {
+}
+/* Definindo as cores do tema */
+:root {
+    --primary-color: #2F4F4F; /* azul cobalto */
+    --secondary-color: #FFFFFF; /* branco */
+    --text-color: #000000; /* preto */
+}
+
+/* Definindo o estilo da fonte */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+/* Definindo o estilo dos links */
+a {
+    color: var(--primary-color);
+}
+
+    a:hover {
+        color: #1E90FF; /* azul claro */
+    }
+
+/* Definindo o estilo do cabeçalho */
+.header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px;
+}
+
+    .header h1 {
+        font-size: 32px;
+        margin: 0;
+    }
+
+/* Definindo o estilo do menu de navegação */
+.navbar {
+    background: linear-gradient(to bottom, var(--primary-color), black);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+    .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 0 10px;
+    }
+
+        .navbar li a {
+            color: var(--secondary-color);
+        }
+
+            .navbar li a:hover {
+                color: #1E90FF; /* azul claro */
+            }
+
+/* Definindo o estilo do conteúdo principal */
+.main-content {
+    margin: 20px;
+}
+
+/* Definindo o estilo dos botões */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+    .btn:hover {
+        background-color: #1E90FF; /* azul claro */
+        transform: scale(1.05);
+    }
+
+/* Definindo o estilo das tabelas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: var(--secondary-color);
+}
+
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+th {
+    font-weight: 700;
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}

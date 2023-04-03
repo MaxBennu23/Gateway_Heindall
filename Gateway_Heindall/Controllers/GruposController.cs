@@ -37,7 +37,7 @@ namespace Gateway_Heindall.Controllers
             var grupo = await _context.Grupos
 
 
-                    .Include(g => g.Integradores)// Cria relacionamento com listagem de Integradores do User
+                    .Include(g => g.Integradores)//HELP : Tabelas : Esa linha cria relacionamento com Grupos/View/Details
                 
                     
                     .FirstOrDefaultAsync(m => m.Id == id);

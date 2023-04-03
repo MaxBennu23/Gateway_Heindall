@@ -4,105 +4,130 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Rotas de Acesso para as APIs</h1>
+<h1>Rotas de Acesso para todas as APIs</h1>
+
+<label for="filtro-id-agencia">Filtrar por IdAgencia:</label>
+<input type="text" id="filtro-id-agencia">
+<button type="button" id="botao-filtrar">Filtrar</button>
+
+<br />
+@*HELP : Tabelas : Esta tabela se relaciona com a Controller Grupos/Details E Integradores E UserDados*@
+<div style="width: 1400px; height: 500px; overflow-x: scroll; overflow-y: scroll;">@*Help : Barra da Rolagem : O estilo define o tamanha da janela*@
+    <table class="table" id="tabela-rotas"> @*Precisa identificar a tabela onde o script vai ser aplicado*@
+        <thead>
+            <tr>
+                <th data-grupo>
+                    @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPort)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPublicKey)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Integrador)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioIDAgencia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPort)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPublicKey)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPrivateKey)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Integrador.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.UserBancoDestino)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.UserNomeEmpresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.UserHostDestino)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.UserHostUserDestino)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.UserSenhaDestino)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.UserPortDestino)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@*HELP : Filtro as linhas a seguir trazem a biblioteca JQUERY pra dentro do projeto e executa os filtros
+    O "~" não é interpretado JavaScript. Use barra invertida simples.
+    JavaScript fica no final da sua View, antes do fechamento da tag body.
+    Isso garante que a página HTML e todos os elementos DOM estejam completamente carregados.
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPort)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPublicKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Integrador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioIDAgencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPort)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPublicKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPrivateKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Integrador.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserDadosConex.Id)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserDadosConex.UserBancoDestino)
-                </td>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+*@
 
-                               <td>
-    @Html.DisplayFor(modelItem => item.UserDadosConex.UserNomeEmpresa)
-                </td>
-<td>
-    @Html.DisplayFor(modelItem => item.UserDadosConex.UserHostDestino)
-</td>
-<td>
-    @Html.DisplayFor(modelItem => item.UserDadosConex.UserHostUserDestino)
-</td>
- <td>
-    @Html.DisplayFor(modelItem => item.UserDadosConex.UserSenhaDestino)
-                </td>
-<td>
-    @Html.DisplayFor(modelItem => item.UserDadosConex.UserPortDestino)
-</td>
-            
-        </tr>
-}
-    </tbody>
-</table>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+

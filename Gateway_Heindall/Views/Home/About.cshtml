@@ -3,21 +3,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 <h2>Considerações Gerais:</h2>
-<div>
-    <p>No momento, existe apenas UM cliente e UMA API.</p>
-    </div>
-<div>
-    <p>A ideia é gerir os acessos e permissões dos usuários para diferentes integradores (como REXTUR, AIRBNB e BOOKING) 
-        que utilizam o mesmo banco de dados para armazenar informações ( DE LOGIN E ACESSO, porem com destino dos dados diferente).</p>
-    <p>Para utilizar o sistema, o usuário só precisa fazer o login e clicar no botao azul.</p>
-    <p>O Admin cadastra os integradores mencionados acima (REXTUR, AIRBNB e BOOKING) fornecendo as informações necessárias.</p>
-    <p>Em seguida relaciona os login e senha para cada integrador, correspondente ao usuario ( que fará login).</p>
-    <p> Quando um usuário está logado, o sistema armazena na INTEGRADORESDOUSERTEMP as informações do banco de dados de destino e a 
-        string de conexão correspondente.</p>
-    <p>Quando o usuário faz uma chamada à API do integrador, o sistema utiliza as informações de login 
-        e os parâmetros de conexão cadastrados para fazer a chamada à API e obter os dados. 
-        Os dados obtidos são então armazenados no banco de dados de destino correspondente.</p>
-</div>
+
 
 <div>
 <h2>Explicação dos relacionamentos:</h2>
@@ -28,25 +14,3 @@
 <p>A classe IntegradoresDoUserTemp é uma tabela temporária que armazena dados de integradores do usuário logado. Tem referências para Integrador, ApplicationUser e IntegradorDoUser para obter informações sobre o integrador, o usuário e as informações de login, senha e número de acesso.</p>
 </div>
 
-
-<div class="container-fluid h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-auto">
-            <img src="~/img/21f157ee-bbfb-427f-815a-53be2247e8a4.jpg" class="img-fluid" alt="logo">
-        </div>
-    </div>
-</div>
-<div class="container-fluid h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-auto">
-            <img src="~/img/4168cb69-7c7a-42ac-b898-6b7232b14ddf.jpg" class="img-fluid" alt="logo">
-        </div>
-    </div>
-</div>
-<div class="container-fluid h-100">
-    <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-auto">
-            <img src="~/img/dd6b7b0f-2845-417b-8b80-3807ff517e9e.jpg" class="img-fluid" alt="logo">
-        </div>
-    </div>
-</div>

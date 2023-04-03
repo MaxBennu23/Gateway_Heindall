@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Gateway_Heindall</title>
+    <title>@ViewData["Title"] Gateway</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Gateway_Heindall.styles.css" asp-append-version="true" />
@@ -15,28 +15,43 @@
 
                 <img src="~/img/planepng.png" width="100" height="50" class="d-inline-block align-top" alt="logo">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Gateway_Heindall</a>
+                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <button type="button" class="btn btn-link">
+                        <img src="~/img/home.png" width="25" height="25" class="d-inline-block align-top" alt="logo">
+                    </button>
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ml-auto">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Grupos" asp-action="Index">ORIGEM dos DADOS</a>
+                        @* <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Grupos" asp-action="Index">ORIGEM dos DADOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UsersDadosConex" asp-action="Index">DADOS do USUARIO</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="UsersDadosConex" asp-action="Index">DADOS do USUARIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Index">INTEGRADORE dos USUARIOS</a>
-                        </li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Index">INTEGRADORE dos USUARIOS</a>
+                        </li>*@
+                       
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Conexoes">Rota das APIs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="IntegradoresdoUser" asp-action="Conexoes">
+                                <button type="button" class="btn btn-link">
+                                    <img src="~/img/web.png" width="25" height="25" class="d-inline-block align-top" alt="logo">
+                                </button>
+                            </a>
                         </li>
-                      
+
                     </ul>
-                    <partial name="_LoginPartial" />
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Erro">ACESSE | REGISTRE-SE</a>
+                    </li>
+
+                    @* <partial name="_LoginPartial" /> *@
                 </div>
             </div>
         </nav>
@@ -49,7 +64,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Gateway_Heindall - <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+            &copy; 2023 | ☕︎ by maxbennu | <a asp-area="" asp-controller="Home" asp-action="About">about</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -57,4 +72,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+
 </html>

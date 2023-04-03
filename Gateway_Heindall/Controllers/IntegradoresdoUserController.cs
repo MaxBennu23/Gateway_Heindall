@@ -27,7 +27,7 @@ namespace Gateway_Heindall.Controllers
         }
 
         // GET: IntegradoresdoUser/Conexoes
-        public async Task<IActionResult> Conexoes()
+        public async Task<IActionResult> Conexoes()//HELP : Tabelas : Esta linha cria relacionamento com IntegradoresdoUser/View/Details
         {
             var principalContext = _context.IntegradoresdoUser.Include(i => i.Integrador).Include(i => i.UserDadosConex);
             return View(await principalContext.ToListAsync());

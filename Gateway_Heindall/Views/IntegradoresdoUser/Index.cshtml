@@ -4,74 +4,81 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Integradores que teem Clientes relacionados</h1>
 
-<p>
-    <a class="btn-success" asp-action="Create">Adicionar</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPort)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPublicKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Integrador)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserDadosConex)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioIDAgencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserUser)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPort)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPublicKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntegUserPrivateKey)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Integrador.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserDadosConex.Id)
-            </td>
-            <td>
-                    <a class="btn-info" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                    <a class="btn-warning" asp-action="Details" asp-route-id="@item.Id">Consultar</a>
-                    <a class="btn-danger" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="d-flex justify-content-between">
+    <a class="btn" asp-action="Create">Adicionar Integradores do User</a>
+</div>
+
+
+<div style="width: 1400px; height: 500px; overflow-x: scroll; overflow-y: scroll;">
+    @*Help : Barra da Rolagem : O estilo define o tamanha da janela*@
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioIDAgencia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPort)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPublicKey)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntegUserPrivateKey)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Integrador)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserDadosConex)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioIDAgencia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPort)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPublicKey)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntegUserPrivateKey)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Integrador.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserDadosConex.Id)
+                    </td>
+                    <td>
+                        <a class="btn" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn" asp-action="Details" asp-route-id="@item.Id">Consultar</a>
+                        <a class="btn" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

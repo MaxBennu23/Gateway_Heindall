@@ -62,12 +62,13 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar a tela anterior</a>
 </div>
 
 
 
 <div>
+    @*HELP : Tabelas : Esta tabela se relaciona com a Controller UserDadosConex*@
     <h4>Integradores com quem este Usuario faz conexão</h4>
     <table class="table">
         <thead>

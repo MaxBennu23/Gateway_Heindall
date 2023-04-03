@@ -37,7 +37,8 @@ namespace Gateway_Heindall.Controllers
 
 
 
-            .Include(g => g.IntegradoresdoUser)// Cria relacionamento com listagem de Integradores
+            .Include(g => g.IntegradoresdoUser)//HELP : Tabelas : Esta linha cria relacionamento com UserDados/View/Details E Conexoes
+
             .ThenInclude(i => i.Integrador) // Depois com Integradores
 
             
