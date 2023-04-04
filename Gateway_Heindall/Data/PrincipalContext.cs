@@ -14,6 +14,9 @@ namespace Gateway_Heindall.Data
         public DbSet<UserDadosConex> UsersDadosConex { get; set; }
         public DbSet<IntegradordoUser> IntegradoresdoUser { get; set; }
 
+        public DbSet<ConfigGeral> ConfigGerais { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
